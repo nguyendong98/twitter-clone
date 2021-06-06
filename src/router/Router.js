@@ -1,10 +1,10 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 const Home = React.lazy(() => import('pages/Home/Home'));
 const Auth = React.lazy(() => import('pages/Auth/Auth'));
 export default function AppRouter({ isLoggedIn }) {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <React.Suspense fallback={<div>Loading...</div>}>
                 {isLoggedIn ? (
                         <>
@@ -21,6 +21,6 @@ export default function AppRouter({ isLoggedIn }) {
                     )
                 }
             </React.Suspense>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
